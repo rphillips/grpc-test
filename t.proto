@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package test;
+
+message Context { 
+  string txnId = 1;
+}
+
+message RequestObj {
+  Context ctx = 1;
+  string key = 2;
+}
+
+service Requests {
+  rpc get(RequestObj) returns(Context) {}
+}
+
